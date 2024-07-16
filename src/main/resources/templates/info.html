@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Member Info</title>
+
+    <link rel="stylesheet" th:href="@{/css/test.css}">
 </head>
 <body>
 
     <h2>회원 정보</h2>
     <hr>
+    <!-- 그냥 파일로 열면 Id, 서버로 돌리면 member.id 값이 나옴 -->
     <div>
         아이디 : <span th:text="${member.id}">Id</span>
     </div>
@@ -17,6 +20,10 @@
     <div>
         나 이 : <span th:text="${member.age}">Age</span>
     </div>
+    <br><br>
+    <a th:href="@{http://naver.com}"><div class="test">네이버</div></a><br>
+    <a th:href="@{loginOk(id='test01', pw='1234')}">로그인Ok</a><br><br>
+    <img th:src="@{img/rabbit.jpg}">
 
 </body>
 </html>
